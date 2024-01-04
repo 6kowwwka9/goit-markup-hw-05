@@ -419,6 +419,7 @@ h3 {
     letter-spacing: 0.02em;
     color: #434455;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 
@@ -453,9 +454,14 @@ h3 {
     width: calc((100% - 48px) / 3);
     border: 1px solid #F4F4FD;
     background: #FFF;
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
        
+}
+.portfolio:hover,
+.portfolio:focus {
+box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+        0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+        0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .portfolio-cards {
     padding: 32px 16px;
@@ -631,7 +637,6 @@ h3 {
     padding: 8px 24px;
     justify-content: center;
     align-items: center;
-    gap: 16px;
     border-radius: 4px;
     background-color: #4D5AE5;
     border: none;
@@ -654,6 +659,7 @@ h3 {
     color: currentColor
 }
 .subscribe-form-icon {
+    fill: #fff;
     margin-left: 16px;
 }
 /*----------modal----------*/
@@ -666,6 +672,9 @@ h3 {
     width: 100vw;
     height: 100vh;
     background-color: rgba(46, 47, 66, 0.40);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-open {
@@ -734,7 +743,6 @@ h3 {
 .modal-caption {
     color: #2e2f42;
     margin-bottom: 16px;
-    padding-top: 24px;
     text-align: center;
     font-weight: 500;
     letter-spacing: -0.03em;
@@ -783,7 +791,7 @@ margin-bottom: 8px;
     border-color: #4d5ae5;
 }
 
-.form-input:focus+.form-icon {
+.form-input:focus+ .form-icon {
     fill: #4d5ae5;
 }
 
@@ -858,18 +866,9 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
-.checkbox-icon {
-    width: 16px;
-    height: 16px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 2px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    fill: transparent;
 
-}
+
+
 .checkbox-icon-check {
     fill: #f4f4fd;
 }
@@ -882,13 +881,10 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     position: relative;
     display: block;
     align-items: center;
-
     margin-bottom: 24px;
-
     font-size: 12px;
     font-weight: 400;
     line-height: 1.17;
-    /* 116.667% */
     letter-spacing: 0.04em;
     color: #8e8f99;
     user-select: none;
@@ -907,7 +903,6 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     align-items: center;
     justify-content: center;
     fill: transparent;
-
 }
 .checkbox-icon-check {
 fill: #f4f4fd;
@@ -933,7 +928,9 @@ fill: #f4f4fd;
     cursor: pointer;
     background-color: #4D5AE5;
     border: none;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     gap: 10px;
